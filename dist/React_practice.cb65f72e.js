@@ -727,38 +727,58 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-//React Element
-const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    className: "heading",
-    tabIndex: "5",
-    children: "Namaste React"
-}, void 0, false, {
-    fileName: "App.js",
-    lineNumber: 6,
-    columnNumber: 5
-}, undefined);
-//React Component - A function that returns jsx code or React Element is called React Component.
+// React Element
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        className: "heading",
+        tabIndex: "5",
+        children: "Namaste React"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+_c = Title;
+// Composing 2 cmponents into one another is nothing but component composition.
+// React Component - A function that returns jsx code or React Element is called React Component.
 const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "container",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            className: "heading",
-            children: "Namaste React Functional Component"
-        }, void 0, false, {
-            fileName: "App.js",
-            lineNumber: 14,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
+        children: [
+            Title(),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 15,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 16,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "heading",
+                children: "Namaste React Functional Component"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 17,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "App.js",
         lineNumber: 13,
         columnNumber: 5
     }, undefined);
-_c = HeadingComponent;
+_c1 = HeadingComponent;
 console.log(HeadingComponent);
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
-root.render(heading);
-var _c;
-$RefreshReg$(_c, "HeadingComponent");
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 24,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "HeadingComponent");
 
   $parcel$ReactRefreshHelpers$4931.postlude(module);
 } finally {
