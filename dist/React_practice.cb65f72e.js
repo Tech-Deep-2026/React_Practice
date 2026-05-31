@@ -727,18 +727,38 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+//React Element
+const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     className: "heading",
     tabIndex: "5",
     children: "Namaste React"
 }, void 0, false, {
     fileName: "App.js",
-    lineNumber: 5,
+    lineNumber: 6,
     columnNumber: 5
 }, undefined);
-console.log(jsxHeading);
+//React Component - A function that returns jsx code or React Element is called React Component.
+const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "container",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            className: "heading",
+            children: "Namaste React Functional Component"
+        }, void 0, false, {
+            fileName: "App.js",
+            lineNumber: 14,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 13,
+        columnNumber: 5
+    }, undefined);
+_c = HeadingComponent;
+console.log(HeadingComponent);
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
-root.render(jsxHeading);
+root.render(heading);
+var _c;
+$RefreshReg$(_c, "HeadingComponent");
 
   $parcel$ReactRefreshHelpers$4931.postlude(module);
 } finally {
