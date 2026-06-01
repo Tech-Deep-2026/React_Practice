@@ -1,0 +1,59 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.header .logo{
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+}
+
+.nav-items{
+    padding: 0px 20px;
+}
+.nav-items > ul{
+    font-size: 20px;
+    display: flex;
+    list-style-type: none;
+}
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 0px 10px;
+}  
+
+.restaurant-logo{
+    width: 200px;
+    height: 150px;
+}
+.restaurant-card{
+    background-color: antiquewhite;
+    width: 200px;
+    height: 350px;
+    margin: 10px;
+    border: 1px solid black ;
+    padding: 5px;
+}
+.search-container{
+    width: 1000px;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    margin: 20px 0px;
+}
+
+.search-button{
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+.restaurant-list{
+    display: flex;
+
+}
+.restaurant-list > ul{
+    display: flex;
+    list-style-type: none;
+}
