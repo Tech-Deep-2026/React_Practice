@@ -21,6 +21,8 @@ const Header = () => {
         </div>     
   );
 }
+
+
 const RestaurantCard = () => {
   return (
     <div className='restaurant-card'>   
