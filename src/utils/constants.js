@@ -1,0 +1,1 @@
+export const LOGO_URL = "https://img.freepik.com/premium-vector/logo-design-restaurant-food-company_1253202-52278.jpg"

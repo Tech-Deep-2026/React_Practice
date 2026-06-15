@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello Welcome to Git & GITHub</p>
+
+    <h2>Second Largest Number Finder</h2>
+    <pre id="output"></pre>
+<!-- 
+    <script>
+        function findSecondLargest(numbers) {
+            if (!Array.isArray(numbers) || numbers.length < 2) {
+                return null;
+            }
+
+            let largest = -Infinity;
+            let secondLargest = -Infinity;
+
+            for (const value of numbers) {
+                if (typeof value !== 'number' || Number.isNaN(value)) {
+                    continue;
+                }
+
+                if (value > largest) {
+                    secondLargest = largest;
+                    largest = value;
+                } else if (value !== largest && value > secondLargest) {
+                    secondLargest = value;
+                }
+            }
+
+            return secondLargest === -Infinity ? null : secondLargest;
+        }
+
+        const numbers = [12, 45, 2, 45, 99, 67, 99, 22];
+        const second = findSecondLargest(numbers);
+
+        const output = document.getElementById('output');
+        output.textContent = `Input numbers: ${JSON.stringify(numbers)}\nSecond largest number: ${second}`;
+    </script> -->
+
+    <script>
+        // function searchElement(arr, num) {
+
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] == num) {
+        //             return 1;
+        //         }
+        //     }
+        //    return -1;
+        // }
+
+        // console.log(searchElement([4, 2, 0, 10, 8, 30], 0));
+
+
+        // function smallestElement(arr){
+        //     let smallest = arr[0];
+        //     for (let i=0;i<arr.length;i++){
+        //         if(arr[i]<smallest){
+        //             smallest = arr[i];
+        //         }
+        //     }
+        //     return smallest;
+        // }
+
+        // console.log(smallestElement([4, 2, 0, 10, 8, 30]));
+
+            // function largestElement(arr) {
+
+            //     let largestNumber = arr[0];
+            //     let secLargestNumber = arr[0];
+            //     for (let i = 0; i < arr.length; i++) {
+            //         if (arr[i] > largestNumber) {
+            //             secLargestNumber = largestNumber;
+            //             largestNumber = arr[i];
+                        
+            //         }
+            //     }
+            //     return secLargestNumber;
+            // }
+            // console.log(largestElement([4, 2, 0, 9, 8, 30]));
+
+    function CcountNeg(arr) {
+
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(CcountNeg([4, -2, 0, 9, -8, 30]));
+    </script>
+</body>
+</html>
