@@ -31,8 +31,12 @@
     width: 200px;
     height: 400px;
     margin: 10px;
-    border: 1px solid black ;
+    /* border: 1px solid black ; */
     padding: 5px;
+}
+.restaurant-card:hover{
+    transform: scale(1.05);
+    border: 1px solid rgb(133, 128, 128);
 }
 .search-container{
     width: 1000px;
@@ -51,7 +55,7 @@
 }
 .restaurant-list{
     display: flex;
-
+    flex-wrap: wrap;
 }
 .restaurant-list > ul{
     display: flex;
@@ -79,7 +83,18 @@
     width: 200px;
     height: 400px;
     margin: 10px;
-    border: 1px solid black ;
+    border: 1px solid rgb(161, 156, 156) ;
     padding: 5px;
-    background-color: #a9a6a6;
+    background-color: #d0cccc;
+}
+.shimmer-search-container{
+    background-color: #d0cccc;
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-search{
+    width: 1000px;
+    height: 40px;
+    margin: 20px 0px;
+    background-color: #d0cccc;
 }

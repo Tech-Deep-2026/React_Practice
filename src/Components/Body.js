@@ -9,6 +9,11 @@ const Body = () => {
     //Localstate variable - super powerful variable - it can trigger UI changes when updated
 
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState(listOfRestaurants);
+    const [searchText, setSearchText] = useState('');
+
+    
+    console.log('Body rendered');
     
     useEffect(() => {
         fetchData();
@@ -22,6 +27,7 @@ const Body = () => {
             const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             console.log('Extracted restaurants:', restaurants);
             setListOfRestaurants(restaurants || []);
+            setFilteredRestaurants(restaurants || []);
     }
     //Normal JS variable
 
@@ -34,23 +40,38 @@ const Body = () => {
 
             <div className='filter-container'>
                 <div className='search'>
-                    <input type='text' className='search-box' placeholder='Search for restaurants' />
-                    <button className='search-btn'>Search</button>
+                    <input 
+                        type='text' 
+                        className='search-box' 
+                        placeholder='Search for restaurants' 
+                        value={searchText} 
+                        onChange={(e) => setSearchText(e.target.value)}
+                    />
+                    <button 
+                        className='search-btn'
+                        onClick={() => {
+                            setFilteredRestaurants(
+                                listOfRestaurants.filter((res) =>
+                                    res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                                )
+                            );
+                       console.log(searchText);
+                    }}>Search</button>
                 </div>
                 <button className='filter-button'
                     onClick={() => {
                         const filterlist = listOfRestaurants.filter(
-                            (res) => res.info.avgRating > 4.0
+                            (res) => res.info.avgRating > 4.5
                         );
                         console.log(filterlist);
-                        setListOfRestaurants(filterlist);
+                        setFilteredRestaurants(filterlist);
                     }}
                 >
                     Top Rated Restaurants
                 </button>
             </div>
             <div className='restaurant-list'>
-                {listOfRestaurants.map((restaurant) => (
+                {filteredRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData={restaurant} />
 
                 ))}
