@@ -2,13 +2,13 @@ import React from 'react';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import { resList } from '../utils/mockData';
+import Shimmer from './Shimmer';
 
 const Body = () => {
 
     //Localstate variable - super powerful variable - it can trigger UI changes when updated
 
-    const [listOfRestaurants, setListOfRestaurants] = useState(resList.restaurants);
-    console.log(listOfRestaurants);
+    const [listOfRestaurants, setListOfRestaurants] = useState([]);
     
     useEffect(() => {
         fetchData();
@@ -19,13 +19,24 @@ const Body = () => {
             const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.52110&lng=73.85020&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
             const json = await data.json();
             console.log('Fetched Swiggy response:', json);
+            const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            console.log('Extracted restaurants:', restaurants);
+            setListOfRestaurants(restaurants || []);
     }
     //Normal JS variable
+
+    if (listOfRestaurants.length === 0) {
+        return <Shimmer />;
+    }
 
     return (
         <div className='body'>
 
             <div className='filter-container'>
+                <div className='search'>
+                    <input type='text' className='search-box' placeholder='Search for restaurants' />
+                    <button className='search-btn'>Search</button>
+                </div>
                 <button className='filter-button'
                     onClick={() => {
                         const filterlist = listOfRestaurants.filter(
