@@ -98,3 +98,8 @@
     margin: 20px 0px;
     background-color: #d0cccc;
 }
+
+.user-card {
+    border: 1px solid grey;
+    padding: 10px;
+}
