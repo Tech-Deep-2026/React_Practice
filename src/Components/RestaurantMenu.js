@@ -5,15 +5,16 @@ const RestaurantMenu = () =>{
     useEffect(()=>{
         fetchMenu(); 
     },[]);
-
+    console.log('RestaurantMenu UseEffect called');
+    
     const fetchMenu = async () => {
 
-        const PROXY = "https://cors-anywhere.herokuapp.com/";
         const data = await fetch(
-            PROXY + "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.52110&lng=73.85020&restaurantId=21001&catalog_qa=undefined&submitAction=ENTER"
+             "https://corsproxy.io/?url=https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.52110&lng=73.85020&restaurantId=21001&catalog_qa=undefined&submitAction=ENTER"
         );
-        const json = await data.json();
-        console.log(json);
+        console.log(data);
+        //const json = await data.json();
+        //console.log(json);
     }
 
     return(
