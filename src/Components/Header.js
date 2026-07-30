@@ -15,6 +15,7 @@ export const Header = () => {
   }, [])
 
   const cartItem = useSelector((store) => store.cart.items || []);
+  console.log("Store length "+cartItem.length)
 
   return (
 
