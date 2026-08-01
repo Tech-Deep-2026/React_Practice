@@ -3,6 +3,7 @@ dist/
 build/
 .parcel-cache/
 .cache/
+coverage/
 
 # Environment
 .env

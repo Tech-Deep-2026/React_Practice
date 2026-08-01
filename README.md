@@ -78,4 +78,16 @@
     - Dispatch(Action)
     - Selector
   
-
+# Testing - RTL (React Testing lib)
+ - Installation 
+    - Installed RTL : npm i -D @testing-library/react
+    - Installed Jest Lib : npm i -D jest 
+    - Installed Babel Dependancies from Jest site
+    - configured babel by creating babel.config.js
+    - configure .parcelrc file - To disable Babel transpilation in Parcel, override the default Parcel config for JavaScript to exclude @parcel/transformer-babel.
+    -  npm i create-jest@30.4.2 
+    -  npm init jest@latest
+    -  npm i -D jest-environment-jsdom  - Installed JSDOM Lib
+    - Install @babel/preset-react lib - to make JSX work in test cases
+    - include @babel/preset-react in the "babel.config.js" file
+    - Install @testing-library/jest-dom - 
